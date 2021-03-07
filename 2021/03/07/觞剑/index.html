@@ -1,0 +1,116 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><meta name="author" content="赵博"><meta name="renderer" content="webkit"><meta name="copyright" content="赵博"><meta name="keywords" content="knifezhao2233 - blog"><meta name="description" content="纪录博客"><meta name="Cache-Control" content="no-cache"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>觞剑 · zhao's blog</title><link rel="stylesheet" href="/css/style.css?v=2018.7.9"><link rel="stylesheet" href="/css/animation.css?v=2018.7.9"><link rel="icon" href="/img/assets/favicon.ico"><link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css?version=1.5.6"><!-- scripts--><script>(function( w ){
+  "use strict";
+  // rel=preload support test
+  if( !w.loadCSS ){
+    w.loadCSS = function(){};
+  }
+  // define on the loadCSS obj
+  var rp = loadCSS.relpreload = {};
+  // rel=preload feature support test
+  // runs once and returns a function for compat purposes
+  rp.support = (function(){
+    var ret;
+    try {
+      ret = w.document.createElement( "link" ).relList.supports( "preload" );
+    } catch (e) {
+      ret = false;
+    }
+    return function(){
+      return ret;
+    };
+  })();
+
+  // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+  // then change that media back to its intended value on load
+  rp.bindMediaToggle = function( link ){
+    // remember existing media attr for ultimate state, or default to 'all'
+    var finalMedia = link.media || "all";
+
+    function enableStylesheet(){
+      link.media = finalMedia;
+    }
+
+    // bind load handlers to enable media
+    if( link.addEventListener ){
+      link.addEventListener( "load", enableStylesheet );
+    } else if( link.attachEvent ){
+      link.attachEvent( "onload", enableStylesheet );
+    }
+
+    // Set rel and non-applicable media type to start an async request
+    // note: timeout allows this to happen async to let rendering continue in IE
+    setTimeout(function(){
+      link.rel = "stylesheet";
+      link.media = "only x";
+    });
+    // also enable media after 3 seconds,
+    // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+    setTimeout( enableStylesheet, 3000 );
+  };
+
+  // loop through link elements in DOM
+  rp.poly = function(){
+    // double check this to prevent external calls from running
+    if( rp.support() ){
+      return;
+    }
+    var links = w.document.getElementsByTagName( "link" );
+    for( var i = 0; i < links.length; i++ ){
+      var link = links[ i ];
+      // qualify links to those with rel=preload and as=style attrs
+      if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+        // prevent rerunning on link
+        link.setAttribute( "data-loadcss", true );
+        // bind listeners to toggle media back
+        rp.bindMediaToggle( link );
+      }
+    }
+  };
+
+  // if unsupported, run the polyfill
+  if( !rp.support() ){
+    // run once at least
+    rp.poly();
+
+    // rerun poly on an interval until onload
+    var run = w.setInterval( rp.poly, 500 );
+    if( w.addEventListener ){
+      w.addEventListener( "load", function(){
+        rp.poly();
+        w.clearInterval( run );
+      } );
+    } else if( w.attachEvent ){
+      w.attachEvent( "onload", function(){
+        rp.poly();
+        w.clearInterval( run );
+      } );
+    }
+  }
+
+
+  // commonjs
+  if( typeof exports !== "undefined" ){
+    exports.loadCSS = loadCSS;
+  }
+  else {
+    w.loadCSS = loadCSS;
+  }
+}( typeof global !== "undefined" ? global : this ) );</script><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" defer></script><script src="/js/main.js?v=2018.7.9" defer></script><!-- fancybox--><link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script><!-- busuanzi--><script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><meta name="generator" content="Hexo 5.3.0"></head><body><section class="profile-close" id="cxo-profile"><div class="profile-avatar"><i class="fa fa-caret-left"></i><img src="/img/assets/cat.png"></div><!--.profile-saying
+  i.fa.fa-comment
+  .saying--><div class="cxo-profile-inner"><div class="profile-name">水落梦桓</div><div class="profile-signature">for me</div><div class="friends"><div>FRIENDS</div><span><a href="https://www.skyone.host/" target="_black">skyone</a></span></div><div class="read-progress"></div></div></section><header id="cxo-intro" style="height: 70vh;background-image: url(/img/intro/index-bg.png);"><nav id="cxo-intro-nav"><section><div class="intro-nav-title"><a href="/">韶华年</a></div><div class="intro-nav-label-box"><a href="/">Home</a><a href="/about/">About</a><a href="/archives/">Archives</a><a href="/tags/">Tags</a></div><i class="fa fa-bars intro-nav-menu"><div class="intro-nav-drop"><a href="/">Home</a><a href="/about/">About</a><a href="/archives/">Archives</a><a href="/tags/">Tags</a></div></i><div class="clear"></div></section></nav><h1 class="post-title">觞剑</h1><div class="post-intros"><div class="post-intro-meta"><span class="post-intro-time"><i class="post-intro-calendar fa fa-calendar"></i><span>2021-03-07</span></span><span class="post-intro-tags"><a class="intro-tag fa fa-tag" href="javascript:void(0)" date-tags="小说"> 小说</a></span></div></div></header><article class="cxo-up" id="cxo-content-outer"><section id="cxo-content-inner"><article class="article-entry" id="post"><h1 id="觞剑志"><a href="#觞剑志" class="headerlink" title="觞剑志"></a>觞剑志</h1><p><strong>（首次写于2021年一月一日20点16分）</strong></p>
+<h2 id="第一卷"><a href="#第一卷" class="headerlink" title="第一卷"></a>第一卷</h2><h3 id="序章-别墅驱鬼"><a href="#序章-别墅驱鬼" class="headerlink" title="序章  别墅驱鬼"></a>序章  别墅驱鬼</h3><p>​     江城，别墅区，1026号别墅。<br>​     室内，几名仆人，一名老者，老者身着燕尾服，带圆框眼镜，他对着面前的人神色恭敬鞠躬，“这件事还请几位大师了。”<br>​     “小事，都是小事。”<br>​     “就是，有我和云兴道长在，宵小见了我们就会逃窜。”<br>​     “阿弥陀佛，施主尽可放心，贫僧必会超度这邪嵩，保李施主全家安全。”<br>​     “园弘大师说的对啊，有我们在尽可放心，倒是这种事情，这种场合，不是什么毛头小子也能随随便便进来滥竽充数的。”<br>​     刚才那个说小事的身着黑色褂子，对这两位道长和僧人点了点头，然后对着口中的”毛头小子”讥讽着：“小子，不是什么人都能够在这里干这种事情的。现在回家去找你妈还来的及。”<br>​     这些德高望重的道长，先生，大师，望着那个陈旧的藏青色宽松上衣，淡灰色长裤，脚上是一双布鞋，头发有些蓬乱的少年。少年相貌普普通通，脸上带着些许的灰尘，背后背着一个细长的木盒子。唯一不同的是，少年的眼睛比较深邃。少年并不像其他的先生一样穿着紫金色的华贵道袍，也没有穿上好的锦缎制作的袈裟。少年看起来十分普通甚至有些脏乱，因此并不像是一个先生。</p>
+<p>​    在这里解释一下，在这种特定的场合下，“先生”这俩字儿的分量那可就不轻了，因为这多半是指那些有着驱鬼降妖神通，或者是懂的指风点水本事的“阴阳先生”。</p>
+<p>​    这几位大师明显对少年态势恶劣，他们有的甚至觉得少年是乞丐，不能在这里呆着，纷纷嚷嚷着要让他出去。眼下情形剑拔弩张，管家急忙上前打圆场。要说这管家明显跟在主人面前多年，处事十分老练，他先是对少年拱拱手说：“照顾小伙子不走，不好意思。”命令一名仆人把少年带到一间客房休息，然后对着那几位大师拱拱手，让他们消消火。</p>
+<p>​    “这位。。。这位小先生该如何称呼？”姓顾，名诚。“少年在房中平静的说道。”顾兄弟有什么需要准备的吗？“准备一张黄布即可。”好的小兄弟我先下去了，晚上再喊你。“仆人说完便退下了。从始至终顾诚从未出现愤怒，紧张，不安的情绪。对于顾诚来说，这些他早已经历多次，早已习以为常，人世间的险恶他经历了一些，他并不会去争辩什么，毕竟行为往往胜于语言。他先是把上衣脱下来，露出略有些瘦弱但结实肌肉分明的身体开始做起俯卧撑。做完后他穿上衣服在床上打坐调息。</p>
+<p>​    时间一转眼就晚上了，李先生也回来了，他名叫李千秋，是这一带的玟昌公司的一名元老级人物。李千秋对着包括顾诚在内的九个人说道：“这事情就交给几位了，动手解决妖怪的我给30万元，其他在场的我每人给一万。”</p>
+<p>   ”您就放心吧李先生。我比叫那邪鬼有来无回。“，“没错没错。”那八个人纷纷附和着。顾诚只是默默的点了点头。李千秋挥了挥手，示意管家和仆人带着家眷都离开。顾诚把背上的木盒取出打开，取出里面用白布包裹着的棍子，合上木盒。然后他站在一旁，默立着。</p>
+<p>​    众人在11点与12点的时候都格外小心警戒着，云兴道长拿起了手中的桃木剑，手里拿着符箓振振有词：“太上老君，命我将临，请天神孙悟空，再请二郎神。急急如律令。”他用余光看到李千秋看到他这样充满信从与尊敬，脸上露出一丝得意，但很快自己收敛住，其余几人也纷纷拿出自己的“法器”，开始“作法”。园弘大师手拿佛珠，念着大悲咒。众人一阵努力，顾诚只是默默站在那里。黑褂人看到顾诚不动后，讥讽着：”小辈就是小辈，老夫一向被人称铁口直断，非要来此地混钱。”顾诚冷哼了一声，并未反驳。</p>
+<p>​    几人忙活了一阵后，看时间已经午夜12点多了，还无声音。几人互相看了看，对李先生说：”应该是不来了。“云兴道长说：”应当是被我们几人的功力震慑到了。“，”贫僧也如此认为。“，其他人也一阵附和。几人看没有问题了便开始坐下来聊天，李千秋看到顾诚没有动作冷冷的看了他一眼，然后去寒暄大师们。</p>
+<p>​    几人正聊的开心，突然”砰”“砰”几声响，却见天花板上的灯全部熄灭，有几个大师点着了蜡烛，有人拿出了手电筒。顾诚在黑暗中感受了一下，然后神色立即严肃起来。“啊！那是。。”一个大师指着楼梯边的一段。众人望去，看见楼梯边有一道黑影，不禁汗毛直立，有几人甚至退了几步。只见黑影模模糊糊的是一年轻女子，她低声呢喃着：“千秋，你不是要给我个交代吗，啊，你知道我还有宝宝都想你，为什么，你怎么这么狠心。你找这些人来干什么，啊！”李千秋苍老的脸上有些僵硬，他沉了一会儿脸，然后说：“大师们，快帮我。”黑褂人手里拿着一窜铃铛，大声喊：“大罗金仙速速来，恶鬼，你今日必死无疑。”云兴道士立即拿起桃木剑，冲上前去拿起符飞向女鬼，喊道：“太上老君急急如律令。”然后拿起剑劈向女鬼头顶。符箓飞到女鬼身上立刻掉在地上，道人惊了，女鬼身边立刻多出一股气似的，挡住了桃木剑，然后一挥把道长扇飞，说时迟那时快只是片刻的功夫。众人都懵了，道长躺在地上吐了一口血，挣扎着，站不起来，肋骨好像断了几根。其他人看着都不知所措。李千秋大声喊道：“大师们,救我，快上啊，快啊。”有一个矮个子说：“李先生，我们不干了。钱不要了，我们先走了。”其他几人立刻复议。“你们都不能走，全留在这里。”几个人更害怕了纷纷向门外冲出去，李千秋一看，立刻也向外跑，向外冲。女鬼看着众人冲出去，开始冷笑。众人冲到门口懵了，大门中间有一个巴掌大的死婴。他周围散发着淡淡的黑气。最先冲出去的园弘和尚吸入黑气立刻倒下，婴儿诡异的笑声传来，然后向众人爬去。众人已经吓懵了，黑褂人转身对女鬼说：“这位小姐，求求放过我们，李千秋随便杀，我帮你都行。”说完跪下了。“你！”李千秋愤怒的看着他。</p>
+<p>​    “你又算什么，女鬼黑气化作黑丝立刻刺进黑褂男。”啊“黑褂男惨叫着，满脸黑气倒在地上。婴儿哀嚎了一声，李千秋捂着头，跪倒在地。”我要杀光你们！！”女鬼大声嚎叫，冲向李千秋与大师们。“你若继续向前走去杀他们，别怪在下不客气.”一道略有些低沉有力的声音传来。“煞笔，你疯了。”有人喊着。</p>
+<p>​    刚才说话的人正是顾诚，他手里拿着棍子一样的东西走过来，“适可而止。”他继续说。“你身上有气，你是阴阳先生？”顾诚冷哼了一声，“我不是阴阳先生，你若想继续杀人，休怪我不客气。”听到这句话，女鬼咆哮着：“与你何干，李千秋害我与孩子，我绝不能让他活着，这里的人也别想死。”女鬼冲向李千秋，顾诚突然十分迅速冲到李千秋前面，冲过去的同时手从口袋里拿出黄布，铺展开来,黑气一碰到这黄布就立即弹开消散，黄布上面用鸡血画出的很多剑形状的图案黯淡了一点。“我不想拔剑，你现在离开，遵守鬼界的规矩还来得及。”，“不可能，他必须死，我先杀了你。”女鬼说完扑向顾诚。顾诚听完把白布一层层拆开，露出了里面的长剑，长剑类型有点类似于汉剑但又不同。他拔出剑，只见剑光一闪，间隔也只有大约五吸的时间，顾诚就快速略到对面，而女鬼的胸口开始迅速的裂开。“啊！”女鬼惨叫，“李千秋，你玩弄我感情，玩弄我身体，我怀了你的孩子你竟然不管。我求你帮我年迈的母亲，你却让他病死在家中。我诅咒你不得好死。”女鬼说完身体渐渐消散。李千秋看到这种情形，脸上露出了得意的冷笑。却没想到，刚才的婴儿见母亲要魂飞魄散，大声嚎哭着，然后小小的脸上留下血泪，然后身体上黑气逐渐凝聚，砰，婴儿消散，仅存的一缕黑气迅速射入李千秋脑中。“因果报应，能有今日，并非意外。”顾诚心中一片唏嘘，“大师，我进了什么东西，大师救我。”李千秋连跑带爬到顾诚面前，苦苦恳求。“那婴儿用自己的魂魄换来对你的诅咒，你估计到死都要噩梦缠身，我并不懂祝由科，我的职责做完了，钱给我，你另寻高明吧。”顾诚缓缓说道。善恶有报，这种事情他见的特别多，他绝不会趟这种浑水，再者说，他其实厌恶李千秋这种人，帮他也是不知情。</p>
+<p>​    清晨，“顾先生，这两张卡里有100万，多的50万算交个朋友。”李千秋谄媚的说。几位道人和尚先生不说话了，正是真假是非肉眼难辨，人心善恶不能推测。“我只拿我应得的那部分，其他的我不要，规矩。你好自为之吧。”少年接过一张卡后直接离开，他不想也不屑于用自己的能力去勾结这种人，更准确的是，他不屑于勾结人。</p>
+<p>​    少年走出去，晨曦从清澈的天空挥洒到少年身上，留下一个有些青涩但已开始成熟的背影。</p>
+<p>​    我们故事的主角，也就是顾诚，他没想到他从这次事件之后将要遇到那么多事情，对他的一生都带来了影响。</p>
+<p>​        </p>
+</article><!-- lincense--><div class="license-wrapper"><p> <span>Author:  </span><a href="http://knifezhao.github.io">赵博</a></p><p> <span>Link:  </span><a href="http://knifezhao.github.io/2021/03/07/%E8%A7%9E%E5%89%91/">http://knifezhao.github.io/2021/03/07/%E8%A7%9E%E5%89%91/</a></p><p> <span>Copyright:  </span><span>All articles in this blog are licensed under <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/3.0">CC BY-NC-SA 3.0</a> unless stating additionally.</span></p></div><div class="post-paginator"><a class="prevSlogan" href="/2021/03/07/%E7%AC%AC%E4%B8%80%E5%8D%B7%20%E9%80%83/" title="第一卷 逃"><span>< PreviousPost</span><br><span class="prevTitle">第一卷 逃</span></a><a class="nextSlogan" href="/2021/01/13/%E8%A7%9E%E5%89%91%E5%BF%97/" title="觞剑志"><span>NextPost ></span><br><span class="nextTitle">觞剑志</span></a><div class="clear"></div></div><div id="comment"></div></section></article><footer id="cxo-footer-outer"><div id="cxo-footer-inner"><p class="footer-container"><span>Site by </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span> | theme </span><a target="_blank" rel="noopener" href="https://github.com/Longlongyu/hexo-theme-Cxo"><span>Cxo</span></a></p><i class="fa fa-user"> </i><span id="busuanzi_value_site_uv"></span><span> | </span><i class="fa fa-eye"> </i><span id="busuanzi_value_site_pv"></span></div></footer><!-- catelog--><div class="toc-wrapper" style="top: 70vh;"><div class="toc-catalog"><i class="fa fa-list"> </i><span>CATALOG</span></div><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%9E%E5%89%91%E5%BF%97"><span class="toc-number">1.</span> <span class="toc-text">觞剑志</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E5%8D%B7"><span class="toc-number">1.1.</span> <span class="toc-text">第一卷</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%8F%E7%AB%A0-%E5%88%AB%E5%A2%85%E9%A9%B1%E9%AC%BC"><span class="toc-number">1.1.1.</span> <span class="toc-text">序章  别墅驱鬼</span></a></li></ol></li></ol></li></ol></div><!-- top--><i class="fa fa-arrow-up close" id="go-up" aria-hidden="true"></i></body></html>
