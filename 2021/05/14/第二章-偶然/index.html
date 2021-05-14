@@ -1,0 +1,109 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><meta name="author" content="赵博"><meta name="renderer" content="webkit"><meta name="copyright" content="赵博"><meta name="keywords" content="knifezhao2233 - blog"><meta name="description" content="纪录博客"><meta name="Cache-Control" content="no-cache"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>第二章-偶然 · zhao's blog</title><link rel="stylesheet" href="/css/style.css?v=2018.7.9"><link rel="stylesheet" href="/css/animation.css?v=2018.7.9"><link rel="icon" href="/img/assets/favicon.ico"><link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css?version=1.5.6"><!-- scripts--><script>(function( w ){
+  "use strict";
+  // rel=preload support test
+  if( !w.loadCSS ){
+    w.loadCSS = function(){};
+  }
+  // define on the loadCSS obj
+  var rp = loadCSS.relpreload = {};
+  // rel=preload feature support test
+  // runs once and returns a function for compat purposes
+  rp.support = (function(){
+    var ret;
+    try {
+      ret = w.document.createElement( "link" ).relList.supports( "preload" );
+    } catch (e) {
+      ret = false;
+    }
+    return function(){
+      return ret;
+    };
+  })();
+
+  // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+  // then change that media back to its intended value on load
+  rp.bindMediaToggle = function( link ){
+    // remember existing media attr for ultimate state, or default to 'all'
+    var finalMedia = link.media || "all";
+
+    function enableStylesheet(){
+      link.media = finalMedia;
+    }
+
+    // bind load handlers to enable media
+    if( link.addEventListener ){
+      link.addEventListener( "load", enableStylesheet );
+    } else if( link.attachEvent ){
+      link.attachEvent( "onload", enableStylesheet );
+    }
+
+    // Set rel and non-applicable media type to start an async request
+    // note: timeout allows this to happen async to let rendering continue in IE
+    setTimeout(function(){
+      link.rel = "stylesheet";
+      link.media = "only x";
+    });
+    // also enable media after 3 seconds,
+    // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+    setTimeout( enableStylesheet, 3000 );
+  };
+
+  // loop through link elements in DOM
+  rp.poly = function(){
+    // double check this to prevent external calls from running
+    if( rp.support() ){
+      return;
+    }
+    var links = w.document.getElementsByTagName( "link" );
+    for( var i = 0; i < links.length; i++ ){
+      var link = links[ i ];
+      // qualify links to those with rel=preload and as=style attrs
+      if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+        // prevent rerunning on link
+        link.setAttribute( "data-loadcss", true );
+        // bind listeners to toggle media back
+        rp.bindMediaToggle( link );
+      }
+    }
+  };
+
+  // if unsupported, run the polyfill
+  if( !rp.support() ){
+    // run once at least
+    rp.poly();
+
+    // rerun poly on an interval until onload
+    var run = w.setInterval( rp.poly, 500 );
+    if( w.addEventListener ){
+      w.addEventListener( "load", function(){
+        rp.poly();
+        w.clearInterval( run );
+      } );
+    } else if( w.attachEvent ){
+      w.attachEvent( "onload", function(){
+        rp.poly();
+        w.clearInterval( run );
+      } );
+    }
+  }
+
+
+  // commonjs
+  if( typeof exports !== "undefined" ){
+    exports.loadCSS = loadCSS;
+  }
+  else {
+    w.loadCSS = loadCSS;
+  }
+}( typeof global !== "undefined" ? global : this ) );</script><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" defer></script><script src="/js/main.js?v=2018.7.9" defer></script><!-- fancybox--><link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script><!-- busuanzi--><script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><meta name="generator" content="Hexo 5.3.0"></head><body><section class="profile-close" id="cxo-profile"><div class="profile-avatar"><i class="fa fa-caret-left"></i><img src="/img/assets/cat.png"></div><!--.profile-saying
+  i.fa.fa-comment
+  .saying--><div class="cxo-profile-inner"><div class="profile-name">水落梦桓</div><div class="profile-signature">for me</div><div class="friends"><div>FRIENDS</div><span><a href="https://www.skyone.host/" target="_black">skyone</a></span></div><div class="read-progress"></div></div></section><header id="cxo-intro" style="height: 70vh;background-image: url(/img/intro/index-bg.png);"><nav id="cxo-intro-nav"><section><div class="intro-nav-title"><a href="/">韶华年</a></div><div class="intro-nav-label-box"><a href="/">Home</a><a href="/about/">About</a><a href="/archives/">Archives</a><a href="/tags/">Tags</a></div><i class="fa fa-bars intro-nav-menu"><div class="intro-nav-drop"><a href="/">Home</a><a href="/about/">About</a><a href="/archives/">Archives</a><a href="/tags/">Tags</a></div></i><div class="clear"></div></section></nav><h1 class="post-title">第二章-偶然</h1><div class="post-intros"><div class="post-intro-meta"><span class="post-intro-time"><i class="post-intro-calendar fa fa-calendar"></i><span>2021-05-14</span></span><span class="post-intro-tags"><a class="intro-tag fa fa-tag" href="javascript:void(0)" date-tags="小说"> 小说</a></span></div></div></header><article class="cxo-up" id="cxo-content-outer"><section id="cxo-content-inner"><article class="article-entry" id="post"><h3 id="第二章-偶然"><a href="#第二章-偶然" class="headerlink" title="第二章    偶然"></a>第二章    偶然</h3><p>​        燕市，作为辽东省的省会，这个城市坐落在北方的寒冷之地，物产丰富，风景宜人。</p>
+<p>​        夜晚，燕市南区郊区，某条街上，一名少年背上背着一个大匣子，左手提着包，右手拿着馒头一边吃一边走着想事情。“接下来我应该去找一份工作，先让自己能吃到饭，再考虑来找寻当年的真相。。。”顾诚一边走一边想着。“我该做什么呢？我只会剑法与一些拳脚，如果去做苦力的话，对于我来说有些不值，等到万不得已时再说。如果是其他的话我没有他们说的什么学历，我只在书上或者跟师傅学过字和一些知识。。。。。。”顾诚一边走一边想，“我如果打着捉妖的名义的话也行，但是我现在没有名气，而且燕市估计藏龙卧虎，万一惹到麻烦就糟糕了。”</p>
+<p>​        顾诚这样走着，突然他注意到附近的小巷子里传来打斗的声音。他想了一下，决定还是先看看是怎么回事。他把包放到一旁，悄悄的走了进去。里面传来了几个年轻人的声音：“哥，就这么给这批货吃了，万一追查到我们头上怎么办？”，又听到一个公鸭嗓的男人声音响起：“咱们做干净点，像上次的那个女人一样，然后咱们及时溜，应该就没有问题，又可以逍遥了。”接着一个听起来有些虚弱的声音响起：“你们这群小畜生，动了兴义的货，我们是不会放过你们的。”</p>
+<p>​        顾诚听完这些明白了这是场帮派火拼，不过这又与他有何关系呢？对于他来说，这种事情本就不清楚情况，自己怎么可能冒然上去，再者，自己没有上去的必要。路见不平拔刀相助这种事也只能发生再想象中了。然而就在他准备离开时，那个示弱的人说了一句：“你们别高兴太早，我们援军已经在路上了。”虚弱的声音响起。其实说出这话那人心理是有点虚的，他是兴义的五个小头目之一，刚刚也是他想要唬住他们。“桀桀，吓唬谁呢？”那几个人一边说一边拿刀去砍那几个人。“我们一个人看到了现在就去报告了，你们死定了。”兴义的小头目开始编谎话。要说就说这也是正好巧合上了，此时顾诚就在这里稍稍看了一下，这一下就把他卷进去了。公鸭嗓的男人也是十分谨慎狡猾之人，他也为了防止意外，对旁边的一个人说：“阿黄，你去看看有没有，其他人灭口。”接着旁边的一个年轻人听到后走过去，向巷口查看。顾诚一看到这种情况，顿时懵了。“这真的是。。。”现在他只能赶紧离开这是非之地。“顾诚赶紧开始跑，这地方虽然是天黑，但是也藏不住他，更何况，他后面还背着剑匣。阿黄是一个眼尖的混混，他一下就看见了，”有人。“他一边喊一边追顾诚。”阿黄你先追，我们马上去帮你。“</p>
+<p>​         顾诚只能现在快速跑，倒不是说他打不过他们，一来现在不方便，一会他们援军再到或者警察来了就不好脱身，二是他要是他就可能会杀人，他现在不想杀人。所以，他只能先撤，以免其他的能人发现。他快速的飞奔，后面阿黄飞快的追着。”这人有点底子。“顾诚心里想着，他现在看见前面有一片废弃的楼，”有那些“东西”的气，而且还挺强大，正好进去甩开他们。“顾诚想到这里，立刻跑到废楼外面墙下，把手里的包向前用力一扔，”砰。“包扔进了废楼的三楼。顾诚飞快翻墙进了废弃的楼。</p>
+<p>​        后面的阿黄看到此景，追到了墙下后拿出手机，”老大，他进了那片废楼。“，”你先进去，我这边解决了，正在去的路上。“阿黄迟疑了须臾，翻墙进入。</p>
+<p>​        顾诚感到里面有一丝丝阴寒，鬼怪出没的地方大都是隐寒的，只不过这个阴气好像有点过浓了。顾诚打开剑匣，取出布裹着的长剑，拿出一个小型的手电筒，一步一步悄悄的走着，向黑暗深处走去。</p>
+<p>​        襄城，豪华庄园内。</p>
+<p>​        看着李千秋的尸体，李典满脸伤心，”谁干的，我一定要杀了他，杀他全家。“他清秀的面孔上满是狰狞，”少爷，是。。。事情是这样的。“旁边一名仆人娓娓道来。”顾诚，是吧，藏青色衣服，使用剑。去，老邹，暗网上500万，悬赏他。其他的道士和尚那些骗人的江湖术士，全杀了，一个不留。“</p>
+</article><!-- lincense--><div class="license-wrapper"><p> <span>Author:  </span><a href="http://knifezhao.github.io">赵博</a></p><p> <span>Link:  </span><a href="http://knifezhao.github.io/2021/05/14/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%81%B6%E7%84%B6/">http://knifezhao.github.io/2021/05/14/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%81%B6%E7%84%B6/</a></p><p> <span>Copyright:  </span><span>All articles in this blog are licensed under <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/3.0">CC BY-NC-SA 3.0</a> unless stating additionally.</span></p></div><div class="post-paginator"><a class="prevSlogan" href="/2021/05/14/%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%AF%B9%E5%86%B3/" title="第三章-对决"><span>< PreviousPost</span><br><span class="prevTitle">第三章-对决</span></a><a class="nextSlogan" href="/2021/05/14/%E7%AC%AC%E4%B8%80%E5%8D%B7-%E9%80%83/" title="第一卷 逃"><span>NextPost ></span><br><span class="nextTitle">第一卷 逃</span></a><div class="clear"></div></div><div id="comment"></div></section></article><footer id="cxo-footer-outer"><div id="cxo-footer-inner"><p class="footer-container"><span>Site by </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span> | theme </span><a target="_blank" rel="noopener" href="https://github.com/Longlongyu/hexo-theme-Cxo"><span>Cxo</span></a></p><i class="fa fa-user"> </i><span id="busuanzi_value_site_uv"></span><span> | </span><i class="fa fa-eye"> </i><span id="busuanzi_value_site_pv"></span></div></footer><!-- catelog--><div class="toc-wrapper" style="top: 70vh;"><div class="toc-catalog"><i class="fa fa-list"> </i><span>CATALOG</span></div><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%81%B6%E7%84%B6"><span class="toc-number">1.</span> <span class="toc-text">第二章    偶然</span></a></li></ol></div><!-- top--><i class="fa fa-arrow-up close" id="go-up" aria-hidden="true"></i></body></html>
